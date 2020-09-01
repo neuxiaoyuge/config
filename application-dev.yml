@@ -29,7 +29,7 @@ spring:
       ribbon:
         enabled: false
   redis:
-    host: localhost
+    host: 10.206.0.14
     port: 6379
     password: Zty&&1212
     database: 1
