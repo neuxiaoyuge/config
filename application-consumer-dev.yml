@@ -1,0 +1,32 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: consumer
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+#      defaultZone: http://localhost:8081/eureka
+      defaultZone: http://119.45.50.7:8081/eureka,http://119.45.50.7:8082/eureka
+
+
+#hystrix:
+#  threadpool:
+#    default:
+#      coreSize: 1000 ##并发执行的最大线程数，默认10
+#      maxQueueSize: 1000 ##BlockingQueue的最大队列数
+#      queueSizeRejectionThreshold: 500 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 110000
+
+feign:
+  hystrix:
+    enabled: true # 开启熔断机制
