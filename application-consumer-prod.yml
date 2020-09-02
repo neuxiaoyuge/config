@@ -10,16 +10,14 @@ eureka:
     hostname: localhost
   client:
     service-url:
-#      defaultZone: http://localhost:8081/eureka
       defaultZone: http://119.45.50.7:8081/eureka,http://119.45.50.7:8082/eureka
-
 
 #hystrix:
 #  threadpool:
 #    default:
-#      coreSize: 1000 ##²¢·¢Ö´ĞĞµÄ×î´óÏß³ÌÊı£¬Ä¬ÈÏ10
-#      maxQueueSize: 1000 ##BlockingQueueµÄ×î´ó¶ÓÁĞÊı
-#      queueSizeRejectionThreshold: 500 ##¼´Ê¹maxQueueSizeÃ»ÓĞ´ïµ½£¬´ïµ½queueSizeRejectionThreshold¸ÃÖµºó£¬ÇëÇóÒ²»á±»¾Ü¾ø
+#      coreSize: 1000 ##å¹¶å‘æ‰§è¡Œçš„æœ€å¤§çº¿ç¨‹æ•°ï¼Œé»˜è®¤10
+#      maxQueueSize: 1000 ##BlockingQueueçš„æœ€å¤§é˜Ÿåˆ—æ•°
+#      queueSizeRejectionThreshold: 500 ##å³ä½¿maxQueueSizeæ²¡æœ‰è¾¾åˆ°ï¼Œè¾¾åˆ°queueSizeRejectionThresholdè¯¥å€¼åï¼Œè¯·æ±‚ä¹Ÿä¼šè¢«æ‹’ç»
 #  command:
 #    default:
 #      execution:
@@ -29,4 +27,4 @@ eureka:
 
 feign:
   hystrix:
-    enabled: true # ¿ªÆôÈÛ¶Ï»úÖÆ
+    enabled: true # å¼€å¯ç†”æ–­æœºåˆ¶
