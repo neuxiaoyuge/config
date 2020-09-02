@@ -1,0 +1,21 @@
+#server:
+#  port: 8085
+#
+#spring:
+#  application:
+#    name: productor
+#
+#ribbon:
+#  eureka:
+#    enabled: true
+#  ReadTimeout: 100000
+#  ConnectTimeout: 100000
+#  MaxAutoRetries: 0
+#  MaxAutoRetriesNextServer: 1
+#  OkToRetryOnAllOperations: false
+#
+#eureka:
+#  client:
+#    service-url:
+##      defaultZone: http://localhost:8081/eureka
+#      defaultZone: http://119.45.50.7:8081/eureka,http://119.45.50.7:8082/eureka
