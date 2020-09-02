@@ -51,7 +51,7 @@ spring:
 #              DELETE
 #              PUT
   redis:
-    host: 119.45.50.7
+    host: 10.206.0.14
     port: 6379
     password: Zty&&1212
     database: 1
