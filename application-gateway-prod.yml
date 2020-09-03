@@ -1,16 +1,22 @@
+#apollo:
+#  meta: http://119.45.50.7:8099
+#  bootstrap:
+#    enabled: true
+#    eagerLoad:
+#      enabled: true
+#    namespaces: application
+#
+#app:
+#  id: 20200806
+
 server:
   port: 8083
+  context-path: /cloud
 
 spring:
   application:
     name: gateway
   cloud:
-    config:
-      label: master  #指定仓库分支
-      profile: dev   #指定版本 本例中建立了dev 和 prod两个版本
-      discovery:
-        enabled: true  # 开启
-        service-id: CONFIG-SERVER # 指定配置中心服务端的server-id
     gateway:
       discovery:
         locator:
@@ -18,21 +24,22 @@ spring:
           enabled: true
       loadbalancer:
         use404: true # 路径不匹配返回404 默认503
-#      routes:
-#      - id: cloud-consumer-s
-#        uri: lb://CONSUMER
-#        predicates:
-#        - Path=/api/**
-#        filters:
-#        - StripPrefix=1
-    loadbalancer:
-      ribbon:
-        enabled: false
-  redis:
-    host: 10.206.0.14
-    port: 6379
-    password: Zty&&1212
-    database: 1
+    #      routes:
+    #      - id: cloud-consumer-s
+    #        uri: lb://CONSUMER
+    #        predicates:
+    #        - Path=/api/**
+    #        filters:
+    #        - StripPrefix=1
+#    loadbalancer:
+#      ribbon:
+#        enabled: false
+#  redis:
+#    host: ${spring.redis.host}
+#    host: 119.45.50.7
+#    port: 6379
+#    password: Zty&&1212
+#    database: 1
 #      globalcors:
 #        corsConfigurations:
 #          '[/**]':
@@ -43,7 +50,11 @@ spring:
 #              POST
 #              DELETE
 #              PUT
-
+  redis:
+    host: 10.206.0.14
+    port: 6379
+    password: Zty&&1212
+    database: 1
 eureka:
   instance:
     prefer-ip-address: true
@@ -54,6 +65,7 @@ eureka:
     healthcheck:
       enabled: true
     service-url:
+      #      defaultZone: http://localhost:8081/eureka
       defaultZone: http://119.45.50.7:8081/eureka,http://119.45.50.7:8082/eureka
 
 #CONSUMER:
