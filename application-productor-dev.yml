@@ -19,3 +19,12 @@ eureka:
     service-url:
 #      defaultZone: http://localhost:8081/eureka
       defaultZone: http://119.45.50.7:8081/eureka,http://119.45.50.7:8082/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS      
