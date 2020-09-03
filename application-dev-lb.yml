@@ -11,7 +11,6 @@
 
 server:
   port: 8088
-  context-path: /cloud
 
 spring:
   application:
